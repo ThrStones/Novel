@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="NovelRPC:war">
+    <output-path>$PROJECT_DIR$/NovelRPC/target</output-path>
+    <root id="archive" name="NovelRPC.war">
+      <element id="artifact" artifact-name="NovelRPC:war exploded" />
+    </root>
+  </artifact>
+</component>

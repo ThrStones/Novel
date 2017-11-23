@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="NovelCommon" />
+        <module name="NovelRPC" />
+        <module name="NovelUtils" />
+        <module name="NovelWeb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="NovelCommon" target="1.6" />
+      <module name="NovelParent" target="1.6" />
+      <module name="NovelRPC" target="1.6" />
+      <module name="NovelUtils" target="1.6" />
+      <module name="NovelWeb" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

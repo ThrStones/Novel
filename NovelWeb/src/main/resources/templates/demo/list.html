@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<link lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../css/bootstrap-table.min.css"/>
+<style>
+    .div-none{
+        display: none;
+    }
+    .div-block{
+        display: block;
+    }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align: center;margin-top: 3%">客户端用户列表</h1>
+    <table id="table" data-toggle="table" data-url="../demo/demoList" data-show-columns="true" data-search="true"
+           data-show-refresh="true" data-show-toggle="true" data-show-export="true" data-pagination="true"
+           data-height="550">
+<!--        <thead>
+        <tr>
+            <th data-field="demoId">客户端编码</th>
+            <th data-field="account">用户名</th>
+            <th data-field="password">密码</th>
+            <th data-field="imei">设备编码IMEI</th>
+            <th data-field="activite">激活状态</th>
+            <th data-field="activeYear">使用年限</th>
+            <th data-field="activeTime">激活时间</th>
+        </tr>
+        </thead>-->
+    </table>
+    <div>
+        <button id="addButton" type="button" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> 新 增
+        </button>
+    </div>
+
+    <div th:if="${msg} == success" class="alert alert-success alert-dismissible col-md-6" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <i class="fa fa-check-circle"></i> 操作成功！
+    </div>
+
+    <div th:if="${msg} == fail" class="alert alert-danger alert-dismissible col-md-6" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <i class="fa fa-times-circle"></i> 操作失败！
+    </div>
+
+    <div id="addFormDiv" style="display: none" class="col-md-6">
+        <form id="addForm" name="addForm" role="form" class="form-horizontal" method="POST" nctype="multipart/form-data" action="../demo/saveDemo">
+            <input id="demoId" name="demoId" type="hidden">
+            <input id="deleteFlag" name="deleteFlag" type="hidden">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 id="title-add" class="div-none panel-title">客户端新增</h3>
+                    <h3 id="title-edit" class="div-none panel-title">客户端修改</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="form-control" id="account" name="account" placeholder="用户名" type="text" required>
+                    </div>
+                    <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input class="form-control" id="password" name="password" placeholder="密码" type="text" required>
+                    </div>
+                    <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+                        <select class="form-control" id="activeYear" name="activeYear" required>
+                            <option value="">选择年限</option>
+                            <option value="0">无限期</option>
+                            <option value="1">一年</option>
+                            <option value="2">两年</option>
+                            <option value="3">三年</option>
+                            <option value="4">四年</option>
+                            <option value="5">五年</option>
+                        </select>
+                    </div>
+                    <br/>
+                    <div id="btn-add" class="row col-md-offset-6 col-md-6 div-none">
+                        <div class="col-md-offset-6 col-md-6">
+                            <button type="submit"  class="btn btn-primary btn-block ">添 加</button>
+                        </div>
+                    </div>
+                    <div id="btn-edit" class="row col-md-offset-6 col-md-6 div-none">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary btn-block">修 改</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button id="btn-delete" type="submit" class="btn btn-warning btn-block">删 除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/tableExport.js"></script>
+<script src="../js/jquery.base64.js"></script>
+<script src="../js/bootstrap-table.js"></script>
+<script src="../js/bootstrap-table-export.js"></script>
+<script src="../demo/list.js"></script>
+</body>
+</html>

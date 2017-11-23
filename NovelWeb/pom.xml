@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>NovelParent</artifactId>
+        <groupId>com.thstones</groupId>
+        <version>1.0</version>
+        <relativePath>../NovelParent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>NovelWeb</artifactId>
+    <packaging>war</packaging>
+    <name>NovelWeb Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.thstones</groupId>
+            <artifactId>NovelUtils</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thstones</groupId>
+            <artifactId>NovelCommon</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <finalName>NovelWeb</finalName>
+    </build>
+</project>
